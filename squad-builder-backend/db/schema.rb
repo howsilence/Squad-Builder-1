@@ -13,23 +13,19 @@
 ActiveRecord::Schema.define(version: 2022_03_08_155242) do
 
   create_table "games", force: :cascade do |t|
-    t.string "game_name"
-    t.string "game_genre"
+    t.string "name"
+    t.string "genre"
     t.string "preferred_skills"
     t.integer "team_size"
+    t.string "platform"
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer "users_id"
-    t.string "skill_name"
+    t.string "name"
   end
 
   create_table "squads", force: :cascade do |t|
-    t.integer "squad_members"
-    t.string "squad_name"
-    t.integer "squad_size"
-    t.integer "squad_plays"
-    t.integer "squad_skills"
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,8 +33,9 @@ ActiveRecord::Schema.define(version: 2022_03_08_155242) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "gamertag"
-    t.integer "games_id"
-    t.integer "skills_id"
+    t.integer "game_id"
+    t.integer "skill_id"
+    t.integer "squad_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
