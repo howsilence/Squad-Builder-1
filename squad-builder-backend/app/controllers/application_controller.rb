@@ -5,6 +5,8 @@ class ApplicationController < Sinatra::Base
     { message: "Times up, lets do this!" }.to_json
   end
 
+
+  ##################### BASIC ROUTES ###################
   get '/games' do
     Game.all.order(:game_name).to_json
   end
@@ -16,18 +18,22 @@ class ApplicationController < Sinatra::Base
   get '/squads' do
     Squad.all.order(:id).to_json
   end
+  
+  ##################### ID ROUTES ###################
+  get '/games/:id' do
+    Game.find(params[:id]).to_json
+  end
 
-  # get '/games/:id' do  *****SEARCH EXAMPLE FROM LAB*****
-  #   game = Game.find(params[:id])
+  get '/users/:id' do
+    User.find(params[:id]).to_json
+  end
 
-  #   game.to_json(only: [:id, :game_name, :genre, :platforms], include: {
-  #     reviews: { only: [:comment, :score], include: {
-  #       user: { only: [:name] }
-  #     } }
-  #   })
-  # end
-
-  # delete '/reviews/:id' do  *****DELETE EXAMPLE FROM LAB*****
+  get '/squads/:id' do
+    Squad.find(params[:id]).to_json
+  end
+  ##################### DELETE ALL ###################
+  #*****DELETE EXAMPLE FROM LAB*****
+  # delete '/reviews/:id' do  
   #   # find the review using the ID
   #   review = Review.find(params[:id])
   #   # delete the review
@@ -36,7 +42,26 @@ class ApplicationController < Sinatra::Base
   #   review.to_json
   # end
 
-  #####################POST ALL ###################
+  delete '/users/:id' do  
+    user = User.find(params[:id])
+    user.destroy
+    user.to_json
+  end
+
+  delete '/games/:id' do  
+    game = Game.find(params[:id])
+    game.destroy
+    game.to_json
+  end
+
+  delete '/squads/:id' do  
+    squad = Squad.find(params[:id])
+    squad.destroy
+    squad.to_json
+  end
+  
+
+  ##################### POST ALL ###################
   #*****POST EXAMPLE FROM LAB*****
   # post '/reviews' do  
   #   review = Review.create(
@@ -48,36 +73,36 @@ class ApplicationController < Sinatra::Base
   #   review.to_json
   # end
 
-  #  post '/users' do  
-  #   user = User.create(
-  #     first_name: params[:first_name],
-  #     gamertag: params[:gamertag],
-  #     platforms: params[:platforms],
-  #     availability: params[:availability]
-  #   )
-  #   user.to_json
-  # end
+  post '/users' do  
+    user = User.create(
+      first_name: params[:first_name],
+      gamertag: params[:gamertag],
+      platforms: params[:platforms],
+      availability: params[:availability]
+    )
+    user.to_json
+  end
 
-  #  post '/games' do  
-  #   game = Game.create(
-  #     game_name: params[:game_name],
-  #     genre: params[:genre],
-  #     skills: params[:skills],
-  #     platform: params[:platform]
-  #   )
-  #   game.to_json
-  # end
+  post '/games' do  
+    game = Game.create(
+      game_name: params[:game_name],
+      genre: params[:genre],
+      skills: params[:skills],
+      platform: params[:platform]
+    )
+    game.to_json
+  end
 
-  #  post '/squads' do  
-  #   squad = Squad.create(
-  #     squad_name: params[:squad_name],
-  #     availability: params[:availability]
-  #   )
-  #   squad.to_json
-  # end
+  post '/squads' do  
+    squad = Squad.create(
+      squad_name: params[:squad_name],
+      availability: params[:availability]
+    )
+    squad.to_json
+  end
 
 
-  #####################PATCH ALL ###################
+  ##################### PATCH ALL ###################
   #*****PATCH EXAMPLE FROM LAB*****
   # patch '/reviews/:id' do  
   #   review = Review.find(params[:id])
@@ -88,38 +113,38 @@ class ApplicationController < Sinatra::Base
   #   review.to_json
   # end
 
-  #  patch '/users/:id' do
-  #   user = User.find(params[:id])
-  #   user.update(
-  #     gamertag: params[:gamertag],
-  #     first_name: params[:first_name],
-  #     platforms: params[:platforms], 
-  #     availability: params[:availability]
-  #     # updated_at: [updated_at: DateTime.new]
-  #   )
-  #   user.to_json
-  # end
+  patch '/users/:id' do
+    user = User.find(params[:id])
+    user.update(
+      gamertag: params[:gamertag],
+      first_name: params[:first_name],
+      platforms: params[:platforms], 
+      availability: params[:availability]
+      # updated_at: [updated_at: DateTime.new]
+    )
+    user.to_json
+  end
 
-  #   patch '/games/:id' do
-  #     game = Game.find(params[:id])
-  #     game.update(
-  #       game_name: params[:game_name],
-  #       genre: params[:genre],
-  #       platform: params[:platform], 
-  #       skills: params[:skills]
-  #       # updated_at: [updated_at: DateTime.new]
-  #     )
-  #     game.to_json
-  #   end
+  patch '/games/:id' do
+    game = Game.find(params[:id])
+    game.update(
+      game_name: params[:game_name],
+      genre: params[:genre],
+      platform: params[:platform], 
+      skills: params[:skills]
+      # updated_at: [updated_at: DateTime.new]
+    )
+    game.to_json
+  end
 
-  #     patch '/squads/:id' do
-  #       squad = Squad.find(params[:id])
-  #       squad.update(
-  #         squad_name: params[:squad_name], 
-  #         availability: params[:availability]
-  #         # updated_at: [updated_at: DateTime.new]
-  #       )
-  #       squad.to_json
-  # end
+  patch '/squads/:id' do
+    squad = Squad.find(params[:id])
+    squad.update(
+      squad_name: params[:squad_name], 
+      availability: params[:availability]
+      # updated_at: [updated_at: DateTime.new]
+    )
+    squad.to_json
+  end
 
 end
