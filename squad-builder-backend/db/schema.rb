@@ -13,29 +13,26 @@
 ActiveRecord::Schema.define(version: 2022_03_08_155242) do
 
   create_table "games", force: :cascade do |t|
-    t.string "name"
+    t.string "game_name"
     t.string "genre"
-    t.string "preferred_skills"
-    t.integer "team_size"
+    t.string "skills"
     t.string "platform"
-  end
-
-  create_table "skills", force: :cascade do |t|
-    t.string "name"
+    t.integer "user_id"
+    t.integer "squad_id"
   end
 
   create_table "squads", force: :cascade do |t|
-    t.string "name"
+    t.string "squad_name"
+    t.string "availability"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.string "gamertag"
-    t.integer "game_id"
-    t.integer "skill_id"
-    t.integer "squad_id"
+    t.string "platforms"
+    t.string "availability"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
