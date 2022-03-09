@@ -1,94 +1,75 @@
 puts "clearing out old seeds..."
-#destroys all previous seeds
 Squad.destroy_all
-# User.destroy_all
+User.destroy_all
 Game.destroy_all
-Skill.destroy_all
-
+#################################################
+#################################################
 puts "🌱 Seeding users..."
-# User.create(name: "Steve", gamertag: "HowSilence", game_id: Game.fourth.id, skill_id: )
+u1 = User.create(first_name: "Steve", gamertag: "HowSilence", platforms: "PS4, PC",availability: "M-F 8pm-10pm, EST", created_at: DateTime.new, updated_at: DateTime.new )
 
+u2 = User.create(first_name: "Al", gamertag: "TBD", platforms: "PC",availability: "M-F 8pm-10pm, EST", created_at: DateTime.new, updated_at: DateTime.new )
 
+u3 = User.create(first_name: "Mike", gamertag: "MikeSunset5", platforms: "PS4, PC",availability: "M-F 8pm-10pm, EST", created_at: DateTime.new, updated_at: DateTime.new )
 
+u4 = User.create(first_name: "Jonathan", gamertag: "TBD", platforms: "TETRIS ONLY",availability: "ANY", created_at: DateTime.new, updated_at: DateTime.new )
 
-
-puts "Seeding games..."
-Game.create(name: "COD: Warzone", genre: "FPS", preferred_skills: "Accuracy, Reaction Time, Situational Awareness", team_size: 1-6, platform: "PS, Xbox, PC")
-
-Game.create(name: "Borderlands 3",genre: "FPS", preferred_skills: "Accuracy, Luck, Face-Rolling", team_size: 1-4, platform: "PS, Xbox, PC")
-
-Game.create(name: "Fortnite", genre: "FPS", preferred_skills: "Luck, Luck, Luck", team_size: 4, platform: "Cross-Play")
-
-Game.create(name: "Destiny 2", genre: "FPS", preferred_skills: "Accuracy, Teamwork, Situational Awareness", team_size: 1-10, platform: "Cross-Play")
-
-Game.create(name: "Hades", genre: "Action-RPG", preferred_skills: "Environmental Awareness, Reaction Time, Luck", team_size: 1, platform: "PC")
-
-Game.create(name: "World of Warcraft", genre: "MMORPG", preferred_skills: "Luck, Face-Rolling, Not-Standing-In-Fire", team_size: 1-40, platform: "PC")
-
-Game.create(name: "Super Smash Bros. Ultimate", genre: "Fighting", preferred_skills: "Reaction Time, Situational Awareness, Luck", team_size: 1-4, platform: "Switch")
-
-Game.create(name: "League of Legends", genre: "MOBA", preferred_skills: "Toxicity-Management, Rage-Containment, Teammate-Lottery-Winner", team_size: 1-5, platform: "PC")
-
-Game.create(name: "Valheim", genre: "Builder", preferred_skills: "Teamwork, Analytics, Button-Mashing", team_size: 1-10, platform: "PC")
-
-Game.create(name: "Street Fighter V", genre: "Fighter", preferred_skills: "Pattern Memorization, Timing, Button-Mashing", team_size: 4, platform: "PS, Xbox, PC")
-
-Game.create(name: "Elden Ring", genre: "Action-RPG", preferred_skills: "Patience, Reaction Time, Situational Awareness", team_size: 1, platform: "PS, Xbox, PC")
-
-Game.create(name: "Dark Souls III", genre: "Action-RPG", preferred_skills: "Patience, Reaction Time, Situational Awareness", team_size: 1, platform: "PS, Xbox, PC")
-
-Game.create(name: "Tetris", genre: "Tetris", preferred_skills: "Timing, Analytics, Boomer-Hobbies", team_size: 1, platform: "PC")
-
-Game.create(name: "Mario Kart 8 Deluxe", genre: "Racing", preferred_skills: "Ability to Hold 'A' for long periods of time, Reaction Time, Luck", team_size: 1-8, platform: "Switch")
-
-Game.create(name: "Animal Crossing: New Horizons", genre: "Chill", preferred_skills: nil, team_size: 1, platform: "Switch")
-
-Game.create(name: "Halo Infinite", genre: "FPS", preferred_skills: "Accuracy, Reaction Time, Situational Awareness", team_size: 1-8, platform: "PC")
-
-Game.create(name: "CS:GO", genre: "FPS", preferred_skills: "Accuracy, Reaction Time, Situational Awareness", team_size: 6, platform: "PC")
-
-Game.create(name: "Overwatch", genre: "FPS", preferred_skills: "Accuracy, Reaction Time, Situational Awareness", team_size: 6, platform: "Cross-Play")
-
-Game.create(name: "VALORANT", genre: "FPS", preferred_skills: "Accuracy, Reaction Time, Situational Awareness", team_size: 6, platform: "PS, Xbox, PC")
-
-Game.create(name: "Apex Legends", genre: "FPS", preferred_skills: "Accuracy, Reaction Time, Situational Awareness", team_size: 4, platform: "PS, Xbox, PC")
-
-Game.create(name: "King of Fighters 2000", genre:"Fighter", preferred_skills: "Button-Mashing, Timing, Turtling", team_size: 1-2, platform: "PC")
-
-
-puts "Seeding skills..."
-Skill.create(name: "Situational Awareness")
-
-Skill.create(name: "Environmental Awareness")
-
-Skill.create(name: "Accuracy")
-
-Skill.create(name: "Reaction Time")
-
-Skill.create(name: "Timing")
-
-Skill.create(name: "Turtling")
-
-Skill.create(name: "Button-Mashing")
-
-Skill.create(name: "Teamwork")
-
-Skill.create(name: "Analytics")
-
-Skill.create(name: "Luck")
-
-Skill.create(name: "Anti-Luck")
-
-
-
-
+u5 = User.create(first_name: "Captain Placeholder", gamertag: "PlaceholderMcPlaceface", platforms: "PC, Xbox, Switch, PS5",availability: "COMING SOON", created_at: DateTime.new, updated_at: DateTime.new )
+#################################################
+#################################################
 puts "Seeding squads..."
-Squad.create(name: "Fellowship of the Bling", created_at: DateTime.new, updated_at: DateTime.new)
+s1 = Squad.create(squad_name: "Fellowship of the Bling", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 7-9PM, EST")
 
-Squad.create(name: "The Order of the Bulemics", created_at: DateTime.new, updated_at: DateTime.new)
+s2 = Squad.create(squad_name: "The Order of the Bulemics", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 11am-1pm, CST")
 
-Squad.create(name: "Team Solo Midwives", created_at: DateTime.new, updated_at: DateTime.new)
+s3 = Squad.create(squad_name: "Team Solo Midwives", created_at: DateTime.new, updated_at: DateTime.new, availability: "F-M, 6pm-3:30am, WST")
 
-# Seed your database here
+s4 = Squad.create(squad_name: "We're Bill Dipperly", created_at: DateTime.new, updated_at: DateTime.new, availability: "F-Sat-Sun, 6pm-3:30am, EST")
 
+s5 = Squad.create(squad_name: "Cool Guy Club", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 6pm-3:30am, CST")
+#################################################
+#################################################
+puts "Seeding games..."
+Game.create(game_name: "COD: Warzone", genre: "FPS", skills: "Accuracy, Reaction Time, Situational Awareness", platform: "PS, Xbox, PC", squad_id: s1.id, user_id: u5.id)
+
+Game.create(game_name: "Borderlands 3",genre: "FPS", skills: "Accuracy, Luck, Face-Rolling", platform: "PS, Xbox, PC", squad_id: s5.id, user_id: u1.id)
+
+Game.create(game_name: "Fortnite", genre: "FPS", skills: "Luck, Luck, Luck", platform: "Cross-Play" , squad_id: s2.id, user_id: u5.id)
+
+Game.create(game_name: "Destiny 2", genre: "FPS", skills: "Accuracy, Teamwork, Situational Awareness", platform: "Cross-Play", squad_id: s4.id, user_id: u3.id)
+
+Game.create(game_name: "Hades", genre: "Action-RPG", skills: "Environmental Awareness, Reaction Time, Luck", platform: "PC", squad_id: s3.id, user_id: u1.id)
+
+Game.create(game_name: "World of Warcraft", genre: "MMORPG", skills: "Luck, Face-Rolling, Not-Standing-In-Fire", platform: "PC", squad_id: s2.id, user_id: u5.id)
+
+Game.create(game_name: "Super Smash Bros. Ultimate", genre: "Fighting", skills: "Reaction Time, Situational Awareness, Luck", platform: "Switch", squad_id: s2.id, user_id: u2.id)
+
+Game.create(game_name: "League of Legends", genre: "MOBA", skills: "Toxicity-Management, Rage-Containment, Teammate-Lottery-Winner", platform: "PC", squad_id: s4.id, user_id: u1.id)
+
+Game.create(game_name: "Valheim", genre: "Builder", skills: "Teamwork, Analytics, Button-Mashing", platform: "PC", squad_id: s1.id, user_id: u3.id)
+
+Game.create(game_name: "Street Fighter V", genre: "Fighter", skills: "Pattern Memorization, Timing, Button-Mashing", platform: "PS, Xbox, PC", squad_id: s3.id, user_id: u5.id)
+
+Game.create(game_name: "Elden Ring", genre: "Action-RPG", skills: "Patience, Reaction Time, Situational Awareness", platform: "PS, Xbox, PC", squad_id: s5.id, user_id: u2.id)
+
+Game.create(game_name: "Dark Souls III", genre: "Action-RPG", skills: "Patience, Reaction Time, Situational Awareness", platform: "PS, Xbox, PC", squad_id: s5.id, user_id: u3.id)
+
+Game.create(game_name: "Tetris", genre: "Tetris", skills: "Timing, Analytics, Boomer-Hobbies", platform: "PC", squad_id: s5.id, user_id: u4.id)
+
+Game.create(game_name: "Mario Kart 8 Deluxe", genre: "Racing", skills: "Ability to Hold 'A' for long periods of time, Reaction Time, Luck", platform: "Switch", squad_id: s1.id, user_id: u5.id)
+
+Game.create(game_name: "Animal Crossing: New Horizons", genre: "Chill", skills: nil, platform: "Switch", squad_id: s2.id, user_id: u5.id)
+
+Game.create(game_name: "Halo Infinite", genre: "FPS", skills: "Accuracy, Reaction Time, Situational Awareness", platform: "PC", squad_id: s2.id, user_id: u5.id)
+
+Game.create(game_name: "CS:GO", genre: "FPS", skills: "Accuracy, Reaction Time, Situational Awareness", platform: "PC", squad_id: s5.id, user_id: u4.id)
+
+Game.create(game_name: "Overwatch", genre: "FPS", skills: "Accuracy, Reaction Time, Situational Awareness", platform: "Cross-Play", squad_id: s1.id, user_id: u1.id)
+
+Game.create(game_name: "VALORANT", genre: "FPS", skills: "Accuracy, Reaction Time, Situational Awareness", platform: "PS, Xbox, PC", squad_id: s4.id, user_id: u5.id)
+
+Game.create(game_name: "Apex Legends", genre: "FPS", skills: "Accuracy, Reaction Time, Situational Awareness", platform: "PS, Xbox, PC", squad_id: s3.id, user_id: u2.id)
+
+Game.create(game_name: "King of Fighters 2000", genre:"Fighter", skills: "Button-Mashing, Timing, Turtling", platform: "PC", squad_id: s1.id, user_id: u5.id)
+#################################################
+#################################################
 puts "✅ Done seeding!"

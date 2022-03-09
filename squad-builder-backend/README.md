@@ -116,3 +116,13 @@ fetch("http://localhost:9292/test")
 [dbdiagram.io]: https://dbdiagram.io/
 [postman download]: https://www.postman.com/downloads/
 [network tab]: https://developer.chrome.com/docs/devtools/network/
+
+
+
+## RELATIONSHIP INFO
+
+A squad has many games
+A user has many games
+Through the games, A squad has many users
+Through the games, A user has many squads
+

@@ -1,11 +1,12 @@
 class CreateGames < ActiveRecord::Migration[6.1]
   def change
     create_table :games do |t|
-      t.string :name
+      t.string :game_name
       t.string :genre
-      t.string :preferred_skills
-      t.integer :team_size
+      t.string :skills
       t.string :platform
+      t.integer :user_id
+      t.integer :squad_id
     end
   end
 end
