@@ -25,7 +25,7 @@ s3 = Squad.create(squad_name: "Team Solo Midwives", created_at: DateTime.new, up
 
 s4 = Squad.create(squad_name: "We're Bill Dipperly", created_at: DateTime.new, updated_at: DateTime.new, availability: "F-Sat-Sun, 6pm-3:30am, EST", squad_img: "https://liquipedia.net/commons/images/thumb/5/58/Tyler1_2018NALCS.jpg/600px-Tyler1_2018NALCS.jpg")
 
-s5 = Squad.create(squad_name: "Cool Guy Club", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 6pm-3:30am, CST" squad_img: "https://preview.redd.it/eszhptdyadg41.jpg?width=960&crop=smart&auto=webp&s=444f7a444f360c540929233917d41d29d7256b56")
+s5 = Squad.create(squad_name: "Cool Guy Club", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 6pm-3:30am, CST", squad_img: "https://preview.redd.it/eszhptdyadg41.jpg?width=960&crop=smart&auto=webp&s=444f7a444f360c540929233917d41d29d7256b56")
 #################################################
 #################################################
 puts "Seeding games..."
