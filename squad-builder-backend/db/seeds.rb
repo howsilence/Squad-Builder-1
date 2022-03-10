@@ -17,15 +17,15 @@ u5 = User.create(first_name: "Captain Placeholder", gamertag: "PlaceholderMcPlac
 #################################################
 #################################################
 puts "Seeding squads..."
-s1 = Squad.create(squad_name: "Fellowship of the Bling", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 7-9PM, EST")
+s1 = Squad.create(squad_name: "Fellowship of the Bling", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 7-9PM, EST", squad_img: "https://i5.walmartimages.com/asr/f2d93b25-f272-4db0-a137-510e0d37592a_1.2f049b05bbb5111471d2a8325c11ec43.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF")
 
-s2 = Squad.create(squad_name: "The Order of the Bulemics", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 11am-1pm, CST")
+s2 = Squad.create(squad_name: "The Order of the Bulemics", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 11am-1pm, CST", squad_img: "https://static01.nyt.com/images/2021/10/18/us/18xp-wizard-01/18xp-wizard-01-jumbo.jpg?quality=75&auto=webp")
 
-s3 = Squad.create(squad_name: "Team Solo Midwives", created_at: DateTime.new, updated_at: DateTime.new, availability: "F-M, 6pm-3:30am, WST")
+s3 = Squad.create(squad_name: "Team Solo Midwives", created_at: DateTime.new, updated_at: DateTime.new, availability: "F-M, 6pm-3:30am, WST", squad_img: "https://earlygame.com/uploads/images/_body/440498/TSM-LOGO_2021-12-10-102215_hcxy.jpg")
 
-s4 = Squad.create(squad_name: "We're Bill Dipperly", created_at: DateTime.new, updated_at: DateTime.new, availability: "F-Sat-Sun, 6pm-3:30am, EST")
+s4 = Squad.create(squad_name: "We're Bill Dipperly", created_at: DateTime.new, updated_at: DateTime.new, availability: "F-Sat-Sun, 6pm-3:30am, EST", squad_img: "https://liquipedia.net/commons/images/thumb/5/58/Tyler1_2018NALCS.jpg/600px-Tyler1_2018NALCS.jpg")
 
-s5 = Squad.create(squad_name: "Cool Guy Club", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 6pm-3:30am, CST")
+s5 = Squad.create(squad_name: "Cool Guy Club", created_at: DateTime.new, updated_at: DateTime.new, availability: "M-F, 6pm-3:30am, CST" squad_img: "https://preview.redd.it/eszhptdyadg41.jpg?width=960&crop=smart&auto=webp&s=444f7a444f360c540929233917d41d29d7256b56")
 #################################################
 #################################################
 puts "Seeding games..."
