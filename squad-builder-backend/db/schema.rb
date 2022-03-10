@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_155242) do
     t.string "genre"
     t.string "skills"
     t.string "platform"
+    t.string "game_image"
     t.integer "user_id"
     t.integer "squad_id"
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_155242) do
   create_table "squads", force: :cascade do |t|
     t.string "squad_name"
     t.string "availability"
+    t.string "squad_img"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
