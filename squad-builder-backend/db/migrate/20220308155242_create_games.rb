@@ -5,6 +5,7 @@ class CreateGames < ActiveRecord::Migration[6.1]
       t.string :genre
       t.string :skills
       t.string :platform
+      t.string :game_image
       t.integer :user_id
       t.integer :squad_id
     end
