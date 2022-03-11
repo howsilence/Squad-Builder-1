@@ -12,10 +12,10 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/squads' do
-    Squad.all.order(:id).to_json
+    Squad.all.order(:squad_name).to_json
   end
   
-  ##################### ID ROUTES ###################
+  ##################### ID & NAME ROUTES ###################
   get '/games/:id' do
     Game.find(params[:id]).to_json
   end
@@ -23,6 +23,16 @@ class ApplicationController < Sinatra::Base
   get '/squads/:id' do
     Squad.find(params[:id]).to_json
   end
+
+  get '/games/:game_name' do
+    Game.find(params[:game_name]).to_json
+  end
+
+  get '/squads/:squad_name' do
+    Squad.find(params[:squad_name]).to_json
+  end
+
+
   ##################### DELETE ALL ###################
   #*****DELETE EXAMPLE FROM LAB*****
   # delete '/reviews/:id' do  
@@ -35,15 +45,11 @@ class ApplicationController < Sinatra::Base
   # end
 
   delete '/games/:id' do  
-    game = Game.find(params[:id])
-    game.destroy
-    game.to_json
+    Game.find(params[:id]).destroy.to_json
   end
 
   delete '/squads/:id' do  
-    squad = Squad.find(params[:id])
-    squad.destroy
-    squad.to_json
+    Squad.find(params[:id]).destroy.to_json
   end
   
 
@@ -60,21 +66,22 @@ class ApplicationController < Sinatra::Base
   # end
 
   post '/games' do  
-    game = Game.create(
+    Game.create(
       game_name: params[:game_name],
       genre: params[:genre],
       crossplay: params[:crossplay],
-      platforms: params[:platforms]
-    )
-    game.to_json
+      platforms: params[:platforms],
+      game_image: params[:game_image],
+    ).to_json
   end
 
   post '/squads' do  
-    squad = Squad.create(
+    Squad.create(
       squad_name: params[:squad_name],
-      availability: params[:availability]
-    )
-    squad.to_json
+      availability: params[:availability],
+      squad_img: params[:squad_img],
+      members: params[:members]
+    ).to_json
   end
 
 
@@ -90,25 +97,24 @@ class ApplicationController < Sinatra::Base
   # end
 
   patch '/games/:id' do
-    game = Game.find(params[:id])
-    game.update(
+    Game.find(params[:id]).update(
       game_name: params[:game_name],
       genre: params[:genre],
       platforms: params[:platforms], 
-      crossplay: params[:crossplay]
+      crossplay: params[:crossplay],
+      game_image: params[:game_image]
       # updated_at: [updated_at: DateTime.new]
-    )
-    game.to_json
+    ).to_json
   end
 
   patch '/squads/:id' do
-    squad = Squad.find(params[:id])
-    squad.update(
+    Squad.find(params[:id]).update(
       squad_name: params[:squad_name], 
-      availability: params[:availability]
+      availability: params[:availability],
+      squad_img: params[:squad_img],
+      members: params[:members]
       # updated_at: [updated_at: DateTime.new]
-    )
-    squad.to_json
+    ).to_json
   end
 
 end
