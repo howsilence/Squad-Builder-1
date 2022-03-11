@@ -80,7 +80,8 @@ class ApplicationController < Sinatra::Base
       squad_name: params[:squad_name],
       availability: params[:availability],
       squad_img: params[:squad_img],
-      members: params[:members]
+      members: params[:members],
+      game_id: params[:game_id]
     ).to_json
   end
 
