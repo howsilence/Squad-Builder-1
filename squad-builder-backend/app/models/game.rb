@@ -1,6 +1,5 @@
 class Game < ActiveRecord::Base
-belongs_to :users
-belongs_to :squad
+    has_many :squads
 
 
 

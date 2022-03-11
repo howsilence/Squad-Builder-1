@@ -15,11 +15,9 @@ ActiveRecord::Schema.define(version: 2022_03_08_155242) do
   create_table "games", force: :cascade do |t|
     t.string "game_name"
     t.string "genre"
-    t.string "skills"
-    t.string "platform"
+    t.string "platforms"
     t.string "game_image"
-    t.integer "user_id"
-    t.integer "squad_id"
+    t.boolean "crossplay"
   end
 
   create_table "squads", force: :cascade do |t|
@@ -28,15 +26,8 @@ ActiveRecord::Schema.define(version: 2022_03_08_155242) do
     t.string "squad_img"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "gamertag"
-    t.string "platforms"
-    t.string "availability"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "game_id"
+    t.string "members"
   end
 
 end

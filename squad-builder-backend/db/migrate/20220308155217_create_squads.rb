@@ -6,6 +6,8 @@ class CreateSquads < ActiveRecord::Migration[6.1]
       t.string :squad_img
       t.timestamp :created_at
       t.timestamp :updated_at
+      t.integer :game_id
+      t.string :members
     end
   end
 end
