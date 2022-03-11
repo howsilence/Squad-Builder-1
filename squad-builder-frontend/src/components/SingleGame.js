@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import NewSquadForm from './NewSquadForm'
 import SquadCard from './SquadCard'
 
-function SingleGame({ games, squads, handleAddSquad }) {
+function SingleGame({ games, squads, handleAddSquad, handleDelete }) {
     const { id } = useParams()
     // console.log(id)
 
@@ -59,8 +59,8 @@ function SingleGame({ games, squads, handleAddSquad }) {
             </div>
         </section>
 
-        {oneSquad.length === 0 ? <h1>No squads yet.</h1> :oneSquad.map((squad) => { return <SquadCard squad={squad} key={squad.id}/>})}
-        <NewSquadForm handleAddSquad={handleAddSquad}/>
+        {oneSquad.length === 0 ? <h1>No squads yet.</h1> :oneSquad.map((squad) => { return <SquadCard squad={squad} key={squad.id} handleDelete= {handleDelete}/>})}
+        <NewSquadForm handleAddSquad={handleAddSquad} id = {id}/>
 
      </> 
     )  

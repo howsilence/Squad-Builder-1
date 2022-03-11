@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
 
-function NewSquadForm({handleAddSquad}) {
+function NewSquadForm({handleAddSquad, id}) {
     const [name, setName] = useState("")
     const [image, setImage] = useState("")
     const [availability, setAvailability] = useState("")
     const [members, setMembers] = useState("")
 
+
     function handleSubmit (e){
+        console.log(id)
+
         // prevent default
         e.preventDefault();
     
@@ -20,7 +23,8 @@ function NewSquadForm({handleAddSquad}) {
               squad_name : name,
               squad_img : image,
               availability: availability,
-              members: members
+              members: members,
+              game_id : id,
           })
         })
         .then(res=>res.json())

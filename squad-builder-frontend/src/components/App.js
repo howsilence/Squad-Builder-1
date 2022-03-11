@@ -33,13 +33,28 @@ function handleAddSquad (newSquad){
   setSquads([...squads,newSquad])
 }
 
+
+function handleDelete (deletedSquad){
+
+  fetch(`http://localhost:9292/squads/${deletedSquad.id}`, {
+    method: "DELETE",
+})
+.then(resp => resp.json())
+.then(() => {
+  const updatedSquads = squads.filter(squad => {
+    return squad.id !== deletedSquad.id
+  })
+  setSquads(updatedSquads)
+})  
+}
+
   return (
     <> 
       {/* <GamePage games={games}/> */}
       <Switch>
         <Route exact path="/"> <GamePage games={games}/></Route>
 
-      <Route path="/game/:id"><SingleGame games={games} squads ={squads} handleAddSquad={handleAddSquad}/></Route>
+      <Route path="/game/:id"><SingleGame games={games} squads ={squads} handleAddSquad={handleAddSquad} handleDelete= {handleDelete}/></Route>
       </Switch>   
          
 

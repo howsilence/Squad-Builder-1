@@ -1,6 +1,12 @@
 import React from 'react'
 
-function SquadCard({squad}) {
+function SquadCard({squad, handleDelete}) {
+
+    function handleClick() {
+        handleDelete(squad)
+
+    }
+
   return (
     <div className="ui items">
         <div className="item">
@@ -18,6 +24,7 @@ function SquadCard({squad}) {
             <div className="extra">
                 {squad.members}
             </div>
+            <button onClick={handleClick}>DELETE</button>
             </div>
         </div>
     </div>
