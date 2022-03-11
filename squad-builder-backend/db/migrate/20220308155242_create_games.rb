@@ -3,11 +3,9 @@ class CreateGames < ActiveRecord::Migration[6.1]
     create_table :games do |t|
       t.string :game_name
       t.string :genre
-      t.string :skills
-      t.string :platform
+      t.string :platforms
       t.string :game_image
-      t.integer :user_id
-      t.integer :squad_id
+      t.boolean :crossplay
     end
   end
 end

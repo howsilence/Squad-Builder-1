@@ -11,10 +11,6 @@ class ApplicationController < Sinatra::Base
     Game.all.order(:game_name).to_json
   end
   
-  get '/users' do
-    User.all.order(:id).to_json
-  end
-
   get '/squads' do
     Squad.all.order(:id).to_json
   end
@@ -22,10 +18,6 @@ class ApplicationController < Sinatra::Base
   ##################### ID ROUTES ###################
   get '/games/:id' do
     Game.find(params[:id]).to_json
-  end
-
-  get '/users/:id' do
-    User.find(params[:id]).to_json
   end
 
   get '/squads/:id' do
@@ -41,12 +33,6 @@ class ApplicationController < Sinatra::Base
   #   # send a response with the deleted review as JSON
   #   review.to_json
   # end
-
-  delete '/users/:id' do  
-    user = User.find(params[:id])
-    user.destroy
-    user.to_json
-  end
 
   delete '/games/:id' do  
     game = Game.find(params[:id])
@@ -73,22 +59,12 @@ class ApplicationController < Sinatra::Base
   #   review.to_json
   # end
 
-  post '/users' do  
-    user = User.create(
-      first_name: params[:first_name],
-      gamertag: params[:gamertag],
-      platforms: params[:platforms],
-      availability: params[:availability]
-    )
-    user.to_json
-  end
-
   post '/games' do  
     game = Game.create(
       game_name: params[:game_name],
       genre: params[:genre],
-      skills: params[:skills],
-      platform: params[:platform]
+      crossplay: params[:crossplay],
+      platforms: params[:platforms]
     )
     game.to_json
   end
@@ -113,25 +89,13 @@ class ApplicationController < Sinatra::Base
   #   review.to_json
   # end
 
-  patch '/users/:id' do
-    user = User.find(params[:id])
-    user.update(
-      gamertag: params[:gamertag],
-      first_name: params[:first_name],
-      platforms: params[:platforms], 
-      availability: params[:availability]
-      # updated_at: [updated_at: DateTime.new]
-    )
-    user.to_json
-  end
-
   patch '/games/:id' do
     game = Game.find(params[:id])
     game.update(
       game_name: params[:game_name],
       genre: params[:genre],
-      platform: params[:platform], 
-      skills: params[:skills]
+      platforms: params[:platforms], 
+      crossplay: params[:crossplay]
       # updated_at: [updated_at: DateTime.new]
     )
     game.to_json
