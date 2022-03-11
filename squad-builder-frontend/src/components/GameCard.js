@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 const botTypeClasses = {
     Assault: "icon military",
@@ -10,8 +11,13 @@ const botTypeClasses = {
   };
 
 function GameCard({game}) {
+    
   return (
     <div className="ui column">
+          <Link 
+        to={`/game/${game.id}`} 
+       >   
+
         <div
             className="ui card"
             key={game.id}
@@ -44,7 +50,7 @@ function GameCard({game}) {
             </span>
             <span>
                 <i className="icon shield" />
-                {game.skills}
+                Crossplay Enabled: {game.crossplay}
             </span>
             <span>
                 <div className="ui center aligned segment basic">
@@ -59,6 +65,7 @@ function GameCard({game}) {
             </span>
             </div>
         </div>
+        </Link>
         </div>
 
   )

@@ -26,3 +26,42 @@ body {
 .ui.card:hover{
   transform: scale(1.1)
 }
+
+
+
+.new-plant-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: black;
+  color: white;
+}
+
+.new-plant-form form {
+  display: flex;
+  justify-content: center;
+}
+
+.new-plant-form input {
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.new-plant-form button {
+  width: 150px;
+}
+
+input {
+  padding: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1.2em;
+  border-bottom: 2px solid gray;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--green);
+}
+
